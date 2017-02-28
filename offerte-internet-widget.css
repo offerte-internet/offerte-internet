@@ -1,0 +1,116 @@
+/* @group offint-widget */
+
+.offint-widget{
+	color: #494949;
+	font-family: sans-serif;
+	font-size: inherit;
+	text-align: center;
+}
+.offint-widget a{
+	color: #494949;
+	text-decoration: none;
+}
+.offint-widget__logo{
+	width: 25px;
+	margin: 0 10px 0 0;
+	vertical-align: middle;
+}
+.offint-widget__h2{
+	margin-top: 10px;
+	font-size: 1.2em;
+	margin-bottom: 20px;
+}
+.offint-widget p{
+    padding: 0 15px;
+	font-size: .8em;
+	text-align: justify;
+}
+.offint-widget ul{
+    padding: 0;
+	list-style: none;
+}
+.offint-widget li{
+	padding: 1.2em;
+    margin: 0;
+    border-top: 1px solid #fff;
+	border-bottom: 1px solid #ccc;
+}
+.offint-widget li:first-child{
+    border-top: none;
+}
+.offint-widget li:last-child{
+    border-bottom: none;
+}
+.offint-widget .offerta__link{
+	display: block;
+	padding: .5em 0;
+	margin-bottom: .4em;
+}
+.offint-widget .operatore{
+	margin: 0 auto .4em;
+	display: block;
+	text-indent: 9999px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.offint-widget .operatore img {
+    display: block;
+    width: 130px;
+    height: auto;
+    margin: 0 auto;
+}
+.offint-widget .speed{
+	margin: 0 1em 0 0;
+}
+.offint-widget del{
+	color: #a80000;
+	margin: 0 .6em;
+	font-size: .8em;
+	display: none;
+}
+.offint-widget .promo{
+	color: green;
+	margin: 0 0 0 1em;
+}
+.offint-widget__spinner {
+    display: none;
+	width: 150px;
+	height: 150px;
+	margin: 30px auto;
+	pointer-events: none;
+	text-align: center;
+}
+
+.offint-widget__spinner.is-spinning {
+    display: block;
+}
+
+.offint-widget__spinner > span {
+    display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin-top: calc(50% - 7px);
+	background-color: #494949;
+	border-radius: 100%;
+	animation: offintbouncedelay 1.4s infinite ease-in-out;
+	/* Prevent first frame from flickering when animation starts */
+	animation-fill-mode: both;
+}
+
+.offint-widget__spinner .offint-widget__spinner__bounce1 {
+	animation-delay: -0.32s;
+}
+
+.offint-widget__spinner .offint-widget__spinner__bounce2 {
+	animation-delay: -0.16s;
+}
+
+@keyframes offintbouncedelay {
+	0%, 80%, 100% { 
+		transform: scale(0.0);
+	} 40% { 
+		transform: scale(1.0);
+	}
+}
+
+/* @end */
