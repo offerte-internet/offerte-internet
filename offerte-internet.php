@@ -12,11 +12,11 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-class offerte_internet_widget_class extends WP_Widget {
+class offerte_internet_class extends WP_Widget {
 	public function __construct(){
 		//initializes the whole thing
 		parent::__construct(
-		'offerte_internet_widget',
+		'offerte_internet',
 		'Offerte Internet',
 		array( 'description' => __('Mostra le promozioni ADSL di OfferteInternet.net', 'offerteinternetwidget') )
 		);
@@ -25,12 +25,17 @@ class offerte_internet_widget_class extends WP_Widget {
 	public function form( $instance ){
 		//this is to enter widget options
 		$title = (isset( $instance[ 'title' ] )) ? $instance[ 'title' ] : 'Offerte Internet';
+		$intro_text = (isset( $instance[ 'intro_text' ] )) ? $instance[ 'intro_text' ] : 'Queste sono le offerte internet più allettanti sul mercato. Naviga in ADSL o Fibra a un prezzo mai visto.';
 		$qty = (isset( $instance[ 'qty' ] )) ? $instance[ 'qty' ] : '5';
-		$optin = (isset( $instance[ 'optin' ] )) ? 'true' : 'false';
+		$optin = (isset( $instance[ 'optin' ] )) ? $instance[ 'optin' ] : 'off';
 	?>
 		<p>
     		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Titolo:', 'offerteinternetwidget'); ?></label>
     		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" type="text" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $title ); ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'intro_text' ); ?>"><?php _e('Intro Text:', 'offerteinternetwidget'); ?></label>
+			<textarea class="widefat" id="<?php echo $this->get_field_id( 'intro_text' ); ?>" name="<?php echo $this->get_field_name( 'intro_text' ); ?>"><?php echo esc_html( $intro_text ); ?></textarea>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'qty' ); ?>"><?php _e('Quantità:', 'offerteinternetwidget'); ?></label>
@@ -48,6 +53,7 @@ class offerte_internet_widget_class extends WP_Widget {
 		//this is to process the form options
 		$instance = array();
 		$instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );
+		$instance[ 'intro_text' ] = strip_tags( $new_instance[ 'intro_text' ] );
 		$instance[ 'qty' ] = $qty;
 		$instance[ 'optin' ] = $new_instance[ 'optin' ];
 		return $instance;
@@ -57,6 +63,7 @@ class offerte_internet_widget_class extends WP_Widget {
 		//this displays the widget
 		extract( $args );
 		$title = apply_filters( 'widget_title', $instance[ 'title' ] );
+		$intro_text = $instance[ 'intro_text' ];
 		$optin = $instance[ 'optin' ];
 		$qty = $instance[ 'qty' ];
 		echo $before_widget;
@@ -67,11 +74,11 @@ class offerte_internet_widget_class extends WP_Widget {
                 <a href="https://www.offerteinternet.net" title="Offerte Internet e promozioni adsl. Scopri come risparmiare sull'adsl di casa">
             <?php } ?>
 			
-			    <h2 class="offint-widget__h2"><img src="https://www.offerteinternet.net/wp-content/themes/proreview/images/offerte-internet-logo.png" alt="Offerte Internet e promozioni adsl. Scopri come risparmiare sull'adsl di casa" class="offint-widget__logo" /><span>Offerte Internet</span></h2>
+			    <h2 class="offint-widget__h2"><img src="<?php echo plugin_dir_url( __FILE__ ) ?>offerte-internet-logo.png" alt="Offerte Internet e promozioni adsl. Scopri come risparmiare sull'adsl di casa" class="offint-widget__logo" /><span>Offerte Internet</span></h2>
 			<?php if ( $optin ) { ?>
 			    </a>
-			    <p>Queste sono le offerte internet al momento più allettanti sul mercato. Clicca sulle offerte per avere più informazioni o sul logo dell'operatore per vedere tutte le offerte.</p>
 			<?php } ?>
+			<p><?php echo $intro_text; ?></p>
 			<div class="offint-widget__spinner"><span class="offint-widget__spinner__bounce1"></span><span class="bounce2"></span><span class="bounce3"></span></div>
 			<ul class="offint-widget__ul"></ul>
 		</div>
@@ -79,15 +86,15 @@ class offerte_internet_widget_class extends WP_Widget {
 		<?php echo $after_widget;
 	}
 }
-//register_widget( 'offerte_internet_widget_class' );
+//register_widget( 'offerte_internet_class' );
 // register widget
-add_action( 'widgets_init', create_function( '', 'return register_widget( "offerte_internet_widget_class" );' ) );
+add_action( 'widgets_init', create_function( '', 'return register_widget( "offerte_internet_class" );' ) );
 
-// Enqueue appropriate styles
-add_action( 'wp_enqueue_scripts', 'my_enqueued_assets' );
+// Enqueue appropriate styles and scripts
+add_action( 'wp_enqueue_scripts', 'offerte_internet_assets' );
 
-function my_enqueued_assets() {
-    wp_register_script( 'offerte-internet-script', plugins_url( '/plugin.js', __FILE__ ) );
+function offerte_internet_assets() {
+    wp_register_script( 'offerte-internet-script', plugins_url( '/offerte-internet.js', __FILE__ ) );
     wp_enqueue_script( 'offerte-internet-script' );
-	wp_enqueue_style( 'offerte-internet-widget-styles', plugin_dir_url( __FILE__ ) . 'offerte-internet-widget.css' );
+	wp_enqueue_style( 'offerte-internet-styles', plugin_dir_url( __FILE__ ) . 'offerte-internet.css' );
 }
