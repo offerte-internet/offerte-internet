@@ -1,7 +1,7 @@
-=== Offerte Internet Widget ===
+=== Offerte Internet ===
 Contributors: GioSensation
 Tags: Offerte Internet, Informazioni ADSL, WordPress API
-Author URI: https://www.offerteinternet.net
+Author URI: http://gravida.pro/emanuele-feliziani-web-developer
 Plugin URI: https://www.offerteinternet.net
 Requires at least: 4.7
 Tested up to: 4.7.2
@@ -27,7 +27,7 @@ This plugin uses JavaScript to download updated info from [Offerte Internet](htt
 
 The only caveat is that it uses JavaScript `promise`s, which are currently supported by all major browsers, but can fail in older ones. I will improve this in a future update by including sensible defaults if JavaScript fails at any point.
 
-**Offerte Internet Widget** comes with a simple stylesheet that makes sure the information looks good by default. You can override the styles through your own stylesheet.
+The **Offerte Internet** plugin comes with a simple stylesheet that makes sure the information looks good by default. You can override the styles through your own stylesheet.
 
 = Issues & support =
 If you see something that's not quite right you can contact me on [Twitter](https://twitter.com/Offerteinternet "Offerte Internet – L'ADSL su Twitter") or [Facebook](https://www.facebook.com/offerteinternet/ "Offerte Internet – L'ADSL su Facebook"). I'll be happy to help with more functionalities and fixes.

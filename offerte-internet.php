@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: Offerte Internet Widget
+Plugin Name: Offerte Internet
 Plugin URI:  https://www.offerteinternet.net
 Description: Aggiunge un widget che mostra le migliori offerte internet per l'adsl e la fibra in Italia prese da OfferteInternet.net.
 Version:     1.0.0
 Author:      Offerte Internet
-Author URI:  https://www.offerteinternet.net
+Author URI:  http://gravida.pro/emanuele-feliziani-web-developer
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
