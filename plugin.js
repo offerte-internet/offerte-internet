@@ -64,14 +64,16 @@ var offerteInternetWidget = function() {
                 
                 listItem.className = 'offerta';
                 
-                anchorCompany.className = 'operatore';
-                anchorCompany.href = review.compagnia_data.link;
-                anchorCompany.title = review.compagnia_data.title;
-                
-                spanCompany.className = 'operatore';
-                
-                imgCompany.src = review.compagnia_data.image;
-                imgCompany.alt = review.compagnia_data.title;
+                if ( review.compagnia_data ) {
+                    anchorCompany.className = 'operatore';
+                    anchorCompany.href = review.compagnia_data.link;
+                    anchorCompany.title = review.compagnia_data.title;
+                    
+                    spanCompany.className = 'operatore';
+                    
+                    imgCompany.src = review.compagnia_data.image;
+                    imgCompany.alt = review.compagnia_data.title;
+                }
                 
                 anchorReview.className = 'offerta__link';
                 anchorReview.href = review.permalink;
