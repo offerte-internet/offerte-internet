@@ -71,7 +71,7 @@ class offerte_internet_class extends WP_Widget {
 		
 		<div class="offerte-internet-widget" data-optin="<?php echo $optin; ?>" data-qty="<?php echo $qty; ?>">
 		    <?php if ( $optin ) { ?>
-                <a href="https://www.offerteinternet.net" title="Offerte Internet e promozioni adsl. Scopri come risparmiare sull'adsl di casa">
+                <a href="https://www.offerteinternet.net" title="Offerte Internet e promozioni adsl. Scopri come risparmiare sull'adsl di casa" target="_blank">
             <?php } ?>
 			
 			    <h2 class="offerte-internet-widget__h2"><img src="<?php echo plugin_dir_url( __FILE__ ) ?>offerte-internet-logo.png" alt="Offerte Internet e promozioni adsl. Scopri come risparmiare sull'adsl di casa" class="offerte-internet-widget__logo" /><span>Offerte Internet</span></h2>

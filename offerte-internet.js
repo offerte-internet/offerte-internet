@@ -68,6 +68,7 @@ var offerteInternetWidget = function() {
                     anchorCompany.className = 'operatore';
                     anchorCompany.href = review.compagnia_data.link;
                     anchorCompany.title = review.compagnia_data.title;
+                    anchorCompany.target = "_blank";
                     
                     spanCompany.className = 'operatore';
                     
@@ -79,6 +80,7 @@ var offerteInternetWidget = function() {
                 anchorReview.href = review.permalink;
                 anchorReview.title = review.title_attribute;
                 anchorReview.textContent = review.r_title;
+                anchorReview.target = "_blank";
                 
                 spanReview.className = 'offerta__link';
                 spanReview.textContent = review.r_title;
