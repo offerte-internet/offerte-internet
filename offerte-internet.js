@@ -38,14 +38,14 @@ var offerteInternetWidget = function() {
     var view = {
         
         init: function () {
-            view.widgetInstances = document.querySelectorAll( '.offint-widget' );
-            view.offerteWidgetContainer = document.querySelector( '.offint-widget ul ');
-            view.spinner = document.querySelector( '.offint-widget .spinner' );
+            view.widgetInstances = document.querySelectorAll( '.offerte-internet-widget' );
+            view.offerteWidgetContainer = document.querySelector( '.offerte-internet-widget ul ');
+            view.spinner = document.querySelector( '.offerte-internet-widget .spinner' );
         },
         
         render: function ( reviews, widget ) {
             var thisWidgetUl = widget.querySelector( 'ul' ),
-                thisWidgetSpinner = widget.querySelector( '.offint-widget__spinner' ),
+                thisWidgetSpinner = widget.querySelector( '.offerte-internet-widget__spinner' ),
                 thisWidgetOptin = widget.getAttribute( 'data-optin' );
             
             thisWidgetSpinner.classList.remove( 'is-spinning' );

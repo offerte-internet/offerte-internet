@@ -69,18 +69,18 @@ class offerte_internet_class extends WP_Widget {
 		echo $before_widget;
 		if ( ! empty( $title) ) echo $before_title . $title . $after_title;?>
 		
-		<div class="offint-widget" data-optin="<?php echo $optin; ?>" data-qty="<?php echo $qty; ?>">
+		<div class="offerte-internet-widget" data-optin="<?php echo $optin; ?>" data-qty="<?php echo $qty; ?>">
 		    <?php if ( $optin ) { ?>
                 <a href="https://www.offerteinternet.net" title="Offerte Internet e promozioni adsl. Scopri come risparmiare sull'adsl di casa">
             <?php } ?>
 			
-			    <h2 class="offint-widget__h2"><img src="<?php echo plugin_dir_url( __FILE__ ) ?>offerte-internet-logo.png" alt="Offerte Internet e promozioni adsl. Scopri come risparmiare sull'adsl di casa" class="offint-widget__logo" /><span>Offerte Internet</span></h2>
+			    <h2 class="offerte-internet-widget__h2"><img src="<?php echo plugin_dir_url( __FILE__ ) ?>offerte-internet-logo.png" alt="Offerte Internet e promozioni adsl. Scopri come risparmiare sull'adsl di casa" class="offerte-internet-widget__logo" /><span>Offerte Internet</span></h2>
 			<?php if ( $optin ) { ?>
 			    </a>
 			<?php } ?>
 			<p><?php echo $intro_text; ?></p>
-			<div class="offint-widget__spinner"><span class="offint-widget__spinner__bounce1"></span><span class="bounce2"></span><span class="bounce3"></span></div>
-			<ul class="offint-widget__ul"></ul>
+			<div class="offerte-internet-widget__spinner"><span class="offerte-internet-widget__spinner__bounce1"></span><span class="bounce2"></span><span class="bounce3"></span></div>
+			<ul class="offerte-internet-widget__ul"></ul>
 		</div>
 		
 		<?php echo $after_widget;
